@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cotejo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            position: relative; /* Para posicionar los logos */
+            padding-top: 50px; /* Espacio para el logo superior */
+            padding-bottom: 50px; /* Espacio para el logo inferior */
+            /* Gradiente de fondo */
+            background: linear-gradient(to right, #e6ffe6, #ccffcc, #99ff99); /* Tonos de verde claro a más oscuro */
+        }
+        .header, .footer {
+            position: absolute;
+            width: auto;
+        }
+        .header {
+            top: 10px;
+            left: 10px;
+        }
+        .footer {
+            bottom: 10px;
+            right: 10px;
+        }
+        .checklist-section {
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente para las secciones sobre el gradiente */
+        }
+        .checklist-section h2, .checklist-section h3 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+        }
+        .checklist-item label {
+            flex: 1; /* Permite que la etiqueta ocupe espacio */
+            min-width: 180px; /* Ancho mínimo para la etiqueta */
+            margin-right: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .observations {
+            flex: 2; /* Permite que el campo de observaciones ocupe más espacio */
+            min-width: 250px; /* Ancho mínimo para observaciones */
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .logo {
+            max-width: 80px; /* Tamaño del logo */
+            height: auto;
+        }
+	h1 {text-align: center}
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="../logos/cobaez.png" alt="Logo Superior Izquierdo" class="logo">
+    </div>
+
+    <h1>Blog escolar <br> Lista de Cotejo</h1>
+
+    <div class="checklist-section">
+        <h2>Entradas</h2>
+        <div class="checklist-item">
+            <label>Hola mundo</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="holaMundoSi" name="holaMundo" value="si" onclick="handleCheckboxClick(this)">
+                <label for="holaMundoSi">Sí</label>
+                <input type="checkbox" id="holaMundoNo" name="holaMundo" value="no" onclick="handleCheckboxClick(this)">
+                <label for="holaMundoNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>Documentos de reporte de clase</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="docReporteClaseSi" name="docReporteClase" value="si" onclick="handleCheckboxClick(this)">
+                <label for="docReporteClaseSi">Sí</label>
+                <input type="checkbox" id="docReporteClaseNo" name="docReporteClase" value="no" onclick="handleCheckboxClick(this)">
+                <label for="docReporteClaseNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>Reportes de clase</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="reportesClaseSi" name="reportesClase" value="si" onclick="handleCheckboxClick(this)">
+                <label for="reportesClaseSi">Sí</label>
+                <input type="checkbox" id="reportesClaseNo" name="reportesClase" value="no" onclick="handleCheckboxClick(this)">
+                <label for="reportesClaseNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+    </div>
+
+    <div class="checklist-section">
+        <h2>Páginas</h2>
+        <h3>1. Comunidades virtuales (Informe)</h3>
+        <div class="checklist-item">
+            <label>a). Visibilidad</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="comunidadesVisibilidadSi" name="comunidadesVisibilidad" value="si" onclick="handleCheckboxClick(this)">
+                <label for="comunidadesVisibilidadSi">Sí</label>
+                <input type="checkbox" id="comunidadesVisibilidadNo" name="comunidadesVisibilidad" value="no" onclick="handleCheckboxClick(this)">
+                <label for="comunidadesVisibilidadNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>b). Estructura</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="comunidadesEstructuraSi" name="comunidadesEstructura" value="si" onclick="handleCheckboxClick(this)">
+                <label for="comunidadesEstructuraSi">Sí</label>
+                <input type="checkbox" id="comunidadesEstructuraNo" name="comunidadesEstructura" value="no" onclick="handleCheckboxClick(this)">
+                <label for="comunidadesEstructuraNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>c). Extensión</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="comunidadesExtensionSi" name="comunidadesExtension" value="si" onclick="handleCheckboxClick(this)">
+                <label for="comunidadesExtensionSi">Sí</label>
+                <input type="checkbox" id="comunidadesExtensionNo" name="comunidadesExtension" value="no" onclick="handleCheckboxClick(this)">
+                <label for="comunidadesExtensionNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+
+        <h3>2. Mantenimiento (informe)</h3>
+        <div class="checklist-item">
+            <label>a). Visibilidad</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="mantenimientoVisibilidadSi" name="mantenimientoVisibilidad" value="si" onclick="handleCheckboxClick(this)">
+                <label for="mantenimientoVisibilidadSi">Sí</label>
+                <input type="checkbox" id="mantenimientoVisibilidadNo" name="mantenimientoVisibilidad" value="no" onclick="handleCheckboxClick(this)">
+                <label for="mantenimientoVisibilidadNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>b). Estructura</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="mantenimientoEstructuraSi" name="mantenimientoEstructura" value="si" onclick="handleCheckboxClick(this)">
+                <label for="mantenimientoEstructuraSi">Sí</label>
+                <input type="checkbox" id="mantenimientoEstructuraNo" name="mantenimientoEstructura" value="no" onclick="handleCheckboxClick(this)">
+                <label for="mantenimientoEstructuraNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>c). Extensión</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="mantenimientoExtensionSi" name="mantenimientoExtension" value="si" onclick="handleCheckboxClick(this)">
+                <label for="mantenimientoExtensionSi">Sí</label>
+                <input type="checkbox" id="mantenimientoExtensionNo" name="mantenimientoExtension" value="no" onclick="handleCheckboxClick(this)">
+                <label for="mantenimientoExtensionNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+
+        <h3>3. Tareas</h3>
+        <div class="checklist-item">
+            <label>Cantidad</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="tareasCantidadSi" name="tareasCantidad" value="si" onclick="handleCheckboxClick(this)">
+                <label for="tareasCantidadSi">Sí</label>
+                <input type="checkbox" id="tareasCantidadNo" name="tareasCantidad" value="no" onclick="handleCheckboxClick(this)">
+                <label for="tareasCantidadNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+        <div class="checklist-item">
+            <label>Extensión</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="tareasExtensionSi" name="tareasExtension" value="si" onclick="handleCheckboxClick(this)">
+                <label for="tareasExtensionSi">Sí</label>
+                <input type="checkbox" id="tareasExtensionNo" name="tareasExtension" value="no" onclick="handleCheckboxClick(this)">
+                <label for="tareasExtensionNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+
+        <h3>4. Portafolio</h3>
+        <div class="checklist-item">
+            <label>Visibilidad</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="portafolioVisibilidadSi" name="portafolioVisibilidad" value="si" onclick="handleCheckboxClick(this)">
+                <label for="portafolioVisibilidadSi">Sí</label>
+                <input type="checkbox" id="portafolioVisibilidadNo" name="portafolioVisibilidad" value="no" onclick="handleCheckboxClick(this)">
+                <label for="portafolioVisibilidadNo">No</label>
+            </div>
+            <input type="text" class="observations" placeholder="Observaciones">
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="../logos/Zorro1.png" alt="Logo Inferior Derecho" class="logo">
+    </div>
+
+    <script>
+        function handleCheckboxClick(clickedCheckbox) {
+            const checkboxName = clickedCheckbox.name;
+            const checkboxesInGroup = document.querySelectorAll(`input[name="${checkboxName}"]`);
+
+            checkboxesInGroup.forEach(checkbox => {
+                if (checkbox !== clickedCheckbox) {
+                    checkbox.checked = false;
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
